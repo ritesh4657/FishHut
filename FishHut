@@ -1,0 +1,468 @@
+🔄 **HTML Edit Mode** - Processing your edit request...
+
+```html
+```diff
+<<<<<<< SEARCH
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Fish Hut - Order</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Order fresh seafood with home delivery from The Fish Hut">
+  <title>The Fish Hut - Order</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+>>>>>>> REPLACE
+```
+
+```
+
+```html
+```diff
+<<<<<<< SEARCH
+    header {
+      background: linear-gradient(135deg, #1e5799 0%,#207cca 51%,#2989d8 100%);
+      padding: 70px 20px;
+=======
+    header {
+      background: linear-gradient(135deg, #0d47a1 0%,#1976d2 51%,#2196f3 100%);
+      padding: 80px 20px;
+>>>>>>> REPLACE
+```
+
+```
+
+```html
+```diff
+<<<<<<< SEARCH
+    .menu-item {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 280px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+=======
+    .menu-item {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+>>>>>>> REPLACE
+```
+
+```
+
+```html
+```diff
+<<<<<<< SEARCH
+      setTimeout(() => {
+        if(confirm('Has payment been completed successfully?')) {
+          window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+        }
+      }, 2000);
+=======
+      // Add Razorpay callback logic here
+      const options = {
+        "key": "YOUR_RAZORPAY_KEY",
+        "amount": document.getElementById('quantity').value * itemPrice * 100,
+        "currency": "INR",
+        "name": "The Fish Hut",
+        "description": "Food Order Payment",
+        "image": "https://your-logo-url.png",
+        "handler": function(response) {
+          window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+        },
+        "theme": {
+          "color": "#f6b93b"
+        }
+      };
+      const rzp = new Razorpay(options);
+      rzp.open();
+>>>>>>> REPLACE
+```
+
+
+
+Would you like me to explain any of these changes or provide additional modifications? The key updates include:
+
+1. Added meta description for SEO
+2. Improved font stack and header gradient
+3. Made menu items slightly wider (300px) with better shadows
+4. Replaced the simple confirmation with actual Razorpay payment integration (you'll need to add your Razorpay key)
+
+Would you like any adjustments to these changes?Here is the updated HTML content after applying above edits:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Order fresh seafood with home delivery from The Fish Hut">
+  <title>The Fish Hut - Order</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f7f9fc;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #0d47a1 0%,#1976d2 51%,#2196f3 100%);
+      padding: 80px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      color: #0b3c5d;
+    }
+    header p {
+      font-style: italic;
+      font-size: 1.2em;
+    }
+    .menu-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .menu-section h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #0b3c5d;
+    }
+    .menu-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .menu-item {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      border: 1px solid #f0f0f0;
+      text-align: left;
+      transition: transform 0.2s;
+    }
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+    .menu-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .menu-item h3 {
+      margin: 10px 0 5px;
+      color: #003049;
+    }
+    .menu-item p {
+      margin: 5px 0;
+    }
+    .menu-item .price {
+      color: #f6b93b;
+      font-weight: bold;
+    }
+    .order-btn {
+      background: #f6b93b;
+      padding: 15px 30px;
+      border: none;
+      font-size: 1em;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 25px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+    }
+    .order-btn:hover {
+      background: #e5a32b;
+    }
+    .order-form {
+      max-width: 500px;
+      background: white;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .order-form h2 {
+      text-align: center;
+      color: #0b3c5d;
+    }
+    label {
+      margin-top: 15px;
+      display: block;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button[type="submit"] {
+      background: #f6b93b;
+      color: #000;
+      font-weight: bold;
+      padding: 10px;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    button[type="submit"]:hover {
+      background: #e5a32b;
+    }
+    .loading-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .loading-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .spinner {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #f6b93b;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .success-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .success-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Fish Hut</h1>
+    <p>Home-cooked fish meals with love & flavor</p>
+    <button class="order-btn" onclick="document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' })">Order Now</button>
+  </header>
+
+  <section class="menu-section">
+    <h2>Our Specialties <span style="font-size: 0.8em; color: #666;">(Weekdays: 11AM-3PM, Weekends: All Day)</span></h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6fd9e411-cb2c-4f30-9744-a9e2d2b69841.png" alt="Freshly grilled fish with lemon and herbs" />
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <h3>Grilled Fish</h3>
+          <span style="background: #ff4757; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.7em;">NEW</span>
+        </div>
+        <p>Lightly seasoned and grilled to perfection with herbs and lemon.</p>
+        <p class="price">₹150 per 1kg</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://source.unsplash.com/250x150/?fried-fish,indian" alt="Fried Fish" />
+        <h3>Fried Fish</h3>
+        <p>Crispy golden batter fried fish served with homemade tartar sauce.</p>
+        <p class="price">₹200 per 1kg</p>
+      </div>
+      <div class="menu-item" style="position: relative;">
+        <div style="position: absolute; top: 10px; right: 10px; background: #ff4757; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; font-weight: bold;">LUCKY FRIDAY</div>
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/21019d45-500d-44b1-8157-a83485ad56bf.png" alt="Friday Special Fish & Rice Combo" />
+        <h3>Friday Special Combo</h3>
+        <p>Our famous fish curry with 1kg basmati rice, two naans, and raita - only on Fridays!</p>
+        <p class="price">₹299 <span style="text-decoration: line-through; color: #888; font-size: 0.9em;">₹399</span></p>
+      </div>
+      <div class="menu-item">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/21019d45-500d-44b1-8157-a83485ad56bf.png" alt="Rice & Fish Curry" />
+        <h3>Rice & Fish Curry</h3>
+        <p>Our signature fish curry served with 1kg fragrant basmati rice.</p>
+        <p class="price">₹270 per plate</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://source.unsplash.com/250x150/?fish-curry,indian" alt="Fish Curry" />
+        <h3>Fish Curry</h3>
+        <p>Traditional spicy fish curry cooked in a rich masala gravy.</p>
+        <p class="price">₹250 per 1kg</p>
+      </div>
+    </div>
+  </section>
+
+  <form class="order-form" id="orderForm">
+    <h2>Place Your Order</h2>
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required />
+
+    <label for="address">Delivery Address:</label>
+    <textarea id="address" name="address" rows="3" required></textarea>
+
+    <label for="item">Choose Dish:</label>
+    <select id="item" name="item" required>
+      <option value="Grilled Fish - ₹150">Grilled Fish - ₹150</option>
+      <option value="Fried Fish - ₹200">Fried Fish - ₹200</option>
+      <option value="Rice & Fish Combo - ₹239">Rice & Fish Combo - ₹239</option>
+      <option value="Fish Curry - ₹250">Fish Curry - ₹250</option>
+    </select>
+
+    <label for="quantity">Quantity (kg):</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+    
+    <label for="payment">Payment Method:</label>
+    <select id="payment" name="payment" required>
+      <option value="UPI">UPI</option>
+      <option value="COD">Cash on Delivery</option>
+    </select>
+
+    <button type="submit">Confirm & Pay</button>
+  </form>
+
+  <div class="loading-modal" id="loadingModal">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <h2>Processing Your Order</h2>
+      <p>Please wait while we confirm your order...</p>
+    </div>
+  </div>
+
+  <footer style="background: #0b3c5d; color: white; text-align: center; padding: 40px 20px; margin-top: 70px;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 20px;">
+        <div style="margin: 10px;">
+          <h3 style="margin-bottom: 10px;">Opening Hours</h3>
+          <p>11AM - 10PM Daily</p>
+        </div>
+        <div style="margin: 10px;">
+          <h3 style="margin-bottom: 10px;">Contact</h3>
+          <p>9955532110</p>
+        </div>
+      </div>
+    <div style="margin-top: 20px; display: flex; justify-content: center; gap: 15px;">
+      <a href="#"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/11ce94ae-06f4-4351-8db2-399103d4cce3.png" alt="Facebook" style="width:30px;"></a>
+      <a href="#"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7b18b097-1576-4c99-9e61-77dc50dab6ba.png" alt="Instagram" style="width:30px;"></a>
+      <a href="#"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/19f6ac2a-cad8-4153-994b-49832d579b0b.png" alt="WhatsApp" style="width:30px;"></a>
+    </div>
+    <p style="margin-top: 30px;">© 2023 The Fish Hut | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyyD9PDGGRTowKnpXMfzrG9leR-jJPI7eOLuWIpZWSOyqho1z7xvpGIoH1_JNbDA3Gq/exec';
+    const form = document.getElementById('orderForm');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const item = document.getElementById('item').value;
+      const payment = document.getElementById('payment').value;
+
+      const whatsappMessage = `New Order from The Fish Hut:\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\nItem: ${item}\nPayment Method: ${payment}`;
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappNumber = '919955532110';
+
+      // Show loading state
+      const loadingModal = document.getElementById('loadingModal');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Processing...';
+      
+      // Disable all form inputs
+      const inputs = form.querySelectorAll('input, select, textarea, button');
+      inputs.forEach(input => input.disabled = true);
+      
+      loadingModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      
+      // Parallel processing with Promise.all
+      Promise.all([
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) }),
+        new Promise(resolve => setTimeout(resolve, 1000)) // Minimum loading time
+      ])
+      .then(() => {
+        if (payment === 'UPI') {
+          // Only show payment redirect message without sending WhatsApp immediately
+          alert('Please complete your payment to confirm the order...');
+          window.open(`https://razorpay.me/@fishhut`, '_blank');
+          
+          // Listen for payment confirmation (simplified for this example)
+          // In a real implementation, you'd use Razorpay's callback API
+          setTimeout(() => {
+            if(confirm('Has payment been completed successfully?')) {
+              window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+            }
+          }, 2000);
+        } else {
+          // For COD, send WhatsApp immediately
+          alert('Order placed with Cash on Delivery. Thank you!');
+          window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+        }
+        form.reset();
+      })
+      .catch(error => {
+        alert("❌ Order failed. Try again.");
+        console.error('Error!', error.message);
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Confirm & Pay';
+        
+        // Re-enable all form inputs
+        inputs.forEach(input => input.disabled = false);
+        
+        loadingModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      });
+    });
+  </script>
+</body>
+</html>
+```
